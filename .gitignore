@@ -5,7 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Assets/Dissonance*
+Assets/Plugins/Dissonance*
 Assets/EffectExamples*
+.gradle/*
 
 # Visual Studio cache directory
 .vs/
