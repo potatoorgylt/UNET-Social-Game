@@ -19,6 +19,9 @@ public class Player : NetworkBehaviour {
     [SyncVar]
     private int currentHealth;
 
+    [SyncVar]
+    public string username = "Loading...";
+
     [SerializeField]
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
@@ -41,9 +44,7 @@ public class Player : NetworkBehaviour {
             //Switch camera
             GameManager.instance.SetSceneCameraActive(false);
             GetComponent<PlayerSetup>().playerUIInstance.SetActive(true);
-
         }
-
         CmdBroadCastNewPlayerSetup();
     }
 

@@ -22,7 +22,11 @@ public class PlayerSetup : NetworkBehaviour {
     [HideInInspector]
     public GameObject playerUIInstance;
 
-    string _name;
+    [HideInInspector]
+    public string _name;
+
+    [SyncVar]
+    public int inetgerTest = 1;
 
     private void Start()
     {
@@ -56,6 +60,14 @@ public class PlayerSetup : NetworkBehaviour {
         yield return new WaitForSeconds(waitTime);
         _name = PlayerPrefs.GetString("PlayerName");
         GameObject.FindGameObjectWithTag("Chat").GetComponent<Chat>().ClientConnectedMessage(_name, Chat.Message.MessageType.info);
+
+        CmdSetNewUsername(_name);
+    }
+
+    [Command]
+    private void CmdSetNewUsername(string value)
+    {
+        GetComponent<Player>().username = value;
     }
 
     public void SetLayerRecursively(GameObject obj, int newLayer) //Depracated
