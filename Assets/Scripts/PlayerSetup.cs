@@ -25,9 +25,6 @@ public class PlayerSetup : NetworkBehaviour {
     [HideInInspector]
     public string _name;
 
-    [SyncVar]
-    public int inetgerTest = 1;
-
     private void Start()
     {
         if (!isLocalPlayer)

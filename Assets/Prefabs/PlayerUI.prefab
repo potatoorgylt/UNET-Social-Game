@@ -54,6 +54,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2464929706543644681}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2464929707080078696}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -169,6 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2464929707080078696}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -186,6 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2464929707080078696}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 929e00e170e1f044cbe9a9c9b841f6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -246,6 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3692118127971705700}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -320,6 +325,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4146771852544225795}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -394,6 +400,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5286586041893117330}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -475,6 +482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983595410053380994}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -504,6 +512,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983595410053380994}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -518,17 +527,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1382636392590714848}
@@ -604,6 +616,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9193122023052775934}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -633,6 +646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9193122023052775934}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 28160f6997b0d164d889c229bd7fb9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -831,22 +845,22 @@ PrefabInstance:
     - target: {fileID: 4151423755701051323, guid: df77b6979fc08b54cb6762b6e49046e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.375
+      value: -15.6
       objectReference: {fileID: 0}
     - target: {fileID: 4151423755701051323, guid: df77b6979fc08b54cb6762b6e49046e2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30.75
+      value: 31.2
       objectReference: {fileID: 0}
     - target: {fileID: 9083219214498638643, guid: df77b6979fc08b54cb6762b6e49046e2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -152.97502
+      value: -152.975
       objectReference: {fileID: 0}
     - target: {fileID: 9083219214498638643, guid: df77b6979fc08b54cb6762b6e49046e2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 35.75
+      value: 36.2
       objectReference: {fileID: 0}
     - target: {fileID: 1671865197263292537, guid: df77b6979fc08b54cb6762b6e49046e2,
         type: 3}

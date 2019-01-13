@@ -34,6 +34,9 @@ public class Chat : NetworkBehaviour
     [SerializeField]
     private SyncListString chatLog = new SyncListString();
 
+    //[SyncVar]
+    //public string currMessage = ""; //deprecated
+
     public override void OnStartClient()
     {
         chatLog.Callback = OnChatUpdated; // set chatlog callback to OnChatUpdated
@@ -120,6 +123,7 @@ public class Chat : NetworkBehaviour
     void OnServerPostChatMessage(NetworkMessage netMsg)
     {
         string message = netMsg.ReadMessage<StringMessage>().value;
+        //currMessage = message; //deprecated
         chatLog.Add(message);
     }
     private void OnChatUpdated(SyncListString.Operation op, int index)
