@@ -22,9 +22,8 @@ public class PlayerUI : MonoBehaviour {
 
     private void Update()
     {
-        SetFuelAmount(controller.GetThrusterFuelAmount());
-
-
+        if(thrusterFuelFill != null)
+            SetFuelAmount(controller.GetThrusterFuelAmount());
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

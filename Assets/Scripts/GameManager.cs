@@ -38,24 +38,46 @@ public class GameManager : MonoBehaviour {
     #region Player tracking
     private const string PLAYER_ID_PREFIX = "Player ";
 
-    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
+    private static Dictionary<string, Player> players = new Dictionary<string, Player>();//deprecated
+    private static Dictionary<string, VgtuPlayer> vgtuPlayers = new Dictionary<string, VgtuPlayer>();
 
-    public static void RegisterPlayer(string _netID, Player _player)
+    public static void RegisterPlayer(string _netID, Player _player, VgtuPlayer _vgtuPlayer)
     {
-        string _playerID = PLAYER_ID_PREFIX + _netID;
+        if(_player != null)//deprecated
+        {
+            string _playerID = PLAYER_ID_PREFIX + _netID;
 
-        players.Add(_playerID, _player);
-        _player.transform.name = _playerID;
+            players.Add(_playerID, _player);
+            _player.transform.name = _playerID;
+        }
+        else if (_vgtuPlayer != null)
+        {
+            string _playerID = PLAYER_ID_PREFIX + _netID;
+
+            vgtuPlayers.Add(_playerID, _vgtuPlayer);
+            _vgtuPlayer.transform.name = _playerID;
+        }
     }
 
-    public static void UnRegisterPlayer(string _playerID)
+    public static void UnRegisterPlayer(string _playerID) //deprecated
     {
             players.Remove(_playerID);
     }
 
-    public static Player GetPlayer(string _playerID)
+
+    public static void UnRegisterVgtuPlayer(string _playerID)
+    {
+        vgtuPlayers.Remove(_playerID);
+    }
+
+    public static Player GetPlayer(string _playerID) //deprecated
     {
         return players[_playerID];
+    }
+
+    public static VgtuPlayer GetVgtuPlayer(string _playerID)
+    {
+        return vgtuPlayers[_playerID];
     }
 
     /*private void OnGUI()

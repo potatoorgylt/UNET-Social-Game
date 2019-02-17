@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Dissonance/Integrations/UNet_HLAPI/Demo/HLAPI Demo.unity
+    guid: 94084c34450850b40ab831ea11f9f0ab
   - enabled: 1
     path: Assets/Scenes/CharacterCreation.unity
     guid: 4f07ff7edf3466f459c3535cd487222f
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainLevel01.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Dissonance/Integrations/UNet_HLAPI/Demo/HLAPI Game World.unity
+    guid: ca5eca46a6d572642ac1eb2b75dab7c4
+  - enabled: 0
+    path: Assets/Scenes/CharacterTestScene.unity
+    guid: 4fa81bca123d5a64d8d6e9dec4450b08
   m_configObjects: {}

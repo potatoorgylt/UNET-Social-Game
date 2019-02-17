@@ -290,6 +290,11 @@ GameObject:
   - component: {fileID: 3479864552280541848}
   - component: {fileID: 620753764888165501}
   - component: {fileID: 8535942182595573815}
+  - component: {fileID: 3009135252795059995}
+  - component: {fileID: 5288405164478114042}
+  - component: {fileID: 7256483564427154016}
+  - component: {fileID: 1165037015453120761}
+  - component: {fileID: 145040305998934549}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -660,6 +665,91 @@ MonoBehaviour:
   usernameText: {fileID: 8638670827343258436}
   chatPanel: {fileID: 7662108099057263847}
   player: {fileID: 1345634486620638775}
+  vgtuPlayer: {fileID: 0}
+--- !u!114 &3009135252795059995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100302856559127024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 6a066ddbf125f9546bcadc947418566b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tokens:
+    _tokens: []
+  _activationFaderSettings:
+    _volume: 1
+    _fadeInTicks: 0
+    _fadeOutTicks: 1500000
+  _triggerFaderSettings:
+    _volume: 1
+    _fadeInTicks: 7500000
+    _fadeOutTicks: 11500000
+  _broadcastPosition: 1
+  _channelType: 2
+  _inputName: PushToTalk
+  _mode: 2
+  _playerId: 
+  _useTrigger: 1
+  _roomName: 
+  _priority: -2
+--- !u!114 &5288405164478114042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100302856559127024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: ab5f404477c7a3042b9c8be8afcce9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &7256483564427154016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100302856559127024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 19dd0b766a7ddc940a3aed2bf0e21d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1165037015453120761
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100302856559127024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 40.74
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &145040305998934549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100302856559127024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 4acd99ad2ea8c6e468f71470ab96deaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5100302856819550236
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,10 +868,10 @@ RectTransform:
   m_Father: {fileID: 2447941936508585351}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 153.19998, y: -8}
-  m_SizeDelta: {x: 295.82, y: 16}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 295.82, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8524322195018335766
 CanvasRenderer:
@@ -1133,7 +1223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.4331}
+  m_AnchoredPosition: {x: 0, y: 2.114}
   m_SizeDelta: {x: 306.4, y: 331.7117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3968876708768566192
@@ -1289,7 +1379,7 @@ GameObject:
   - component: {fileID: 6315215241541104096}
   - component: {fileID: 3612624002890910043}
   m_Layer: 9
-  m_Name: Panel
+  m_Name: ChatPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,10 +1400,10 @@ RectTransform:
   m_Father: {fileID: 5012288888210159707}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: -331.71}
-  m_SizeDelta: {x: 306.39996, y: 16}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 306.39996, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8376894546608120774
 CanvasRenderer:

@@ -15,6 +15,8 @@ public class PlayerCanvas : NetworkBehaviour
 
     [SerializeField]
     private Player player;
+    [SerializeField]
+    private VgtuPlayer vgtuPlayer;
 
     private Chat chat;
     private InputField chatInput;
@@ -33,7 +35,10 @@ public class PlayerCanvas : NetworkBehaviour
 
     private void Update()
     {
-        usernameText.text = player.username;
+        if(player != null)
+            usernameText.text = player.username;
+        if (vgtuPlayer != null)
+            usernameText.text = vgtuPlayer.username;
 
         /*if (chat.currMessage != "")
         {
