@@ -4,3 +4,4 @@ This is a Unity UNET(deprecated) social game project for my bachelor's degree de
 Dependancies:
 Dissonance Voice Chat
 Unity Effect Examples
+Obi Cloth

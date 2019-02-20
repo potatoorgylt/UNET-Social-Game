@@ -16,5 +16,20 @@ public class UIManager : MonoBehaviour
     {
         networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
         networkManager = networkManagerObj.GetComponent<NetworkCustom>();
+
+        btn1.onClick.AddListener(delegate { SelectChar(0); });
+        btn2.onClick.AddListener(delegate { SelectChar(1); });
+    }
+
+    void SelectChar(int charId)
+    {
+        if(charId == 0)
+        {
+            networkManager.btn1();
+        }
+        else if(charId == 1)
+        {
+            networkManager.btn2();
+        }
     }
 }
