@@ -85,5 +85,7 @@ public class JoinGame : MonoBehaviour
         networkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, networkManager.OnMatchJoined);
         ClearRoomList();
         status.text = "Joining...";
+
+
     }
 }
