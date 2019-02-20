@@ -17,11 +17,11 @@ public class JoinGame : MonoBehaviour
     [SerializeField]
     private Transform roomListParent;
 
-    private NetworkManager networkManager;
+    public NetworkCustom networkManager;
 
     private void Start()
     {
-        networkManager = NetworkManager.singleton;
+        //networkManager = NetworkManager.singleton;
         if (networkManager.matchMaker == null)
         {
             networkManager.StartMatchMaker();

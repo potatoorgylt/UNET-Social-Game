@@ -6,11 +6,14 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isOn = false;
 
-    private NetworkManager networkManager;
+    private GameObject networkManagerObj;
+    private NetworkCustom networkManager;
 
     private void Start()
     {
-        networkManager = NetworkManager.singleton;
+        //networkManager = NetworkManager.singleton;
+        networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
+        networkManager = networkManagerObj.GetComponent<NetworkCustom>();
     }
 
     public void LeaveRoom()

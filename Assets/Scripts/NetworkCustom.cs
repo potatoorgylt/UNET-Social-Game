@@ -23,13 +23,13 @@ public class NetworkCustom : NetworkManager
 
         if (selectedClass == 0)
         {
-            GameObject player = Instantiate(Resources.Load("Characters/VGTU_girl_low", typeof(GameObject))) as GameObject;
+            GameObject player = Instantiate(Resources.Load("VGTU_girl_low", typeof(GameObject))) as GameObject;
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
 
         if (selectedClass == 1)
         {
-            GameObject player = Instantiate(Resources.Load("Characters/VGTU_malev2_low", typeof(GameObject))) as GameObject;
+            GameObject player = Instantiate(Resources.Load("VGTU_malev2_low", typeof(GameObject))) as GameObject;
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
     }
@@ -51,10 +51,12 @@ public class NetworkCustom : NetworkManager
     public void btn1()
     {
         chosenCharacter = 0;
+        Debug.Log("You chose first charecter");
     }
 
     public void btn2()
     {
         chosenCharacter = 1;
+        Debug.Log("You chose second charecter");
     }
 }

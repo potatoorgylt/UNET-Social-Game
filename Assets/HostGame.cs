@@ -9,7 +9,8 @@ public class HostGame : MonoBehaviour {
 
     private string roomName;
 
-    private NetworkManager networkManager;
+    //private NetworkManager networkManager;
+    public NetworkCustom customNetworkManager;
 
     public InputField hostGameInputField;
 
@@ -20,10 +21,14 @@ public class HostGame : MonoBehaviour {
             string roomName = PlayerPrefs.GetString("PlayerName") + "'s room";
             hostGameInputField.text = roomName;
         }
-        networkManager = NetworkManager.singleton;
-        if(networkManager.matchMaker == null)
+        //networkManager = NetworkManager.singleton;
+        /*if(networkManager.matchMaker == null)
         {
             networkManager.StartMatchMaker();
+        }*/
+        if(customNetworkManager.matchMaker == null)
+        {
+            customNetworkManager.StartMatchMaker();
         }
     }
 
@@ -37,7 +42,8 @@ public class HostGame : MonoBehaviour {
         if(roomName != "" && roomName != null)
         {
             //Create room
-            networkManager.matchMaker.CreateMatch(roomName, roomSize, true, "", "", "", 0, 0, networkManager.OnMatchCreate);
+            //networkManager.matchMaker.CreateMatch(roomName, roomSize, true, "", "", "", 0, 0, networkManager.OnMatchCreate);
+            customNetworkManager.matchMaker.CreateMatch(roomName, roomSize, true, "", "", "", 0, 0, customNetworkManager.OnMatchCreate);
         }
     }
 }

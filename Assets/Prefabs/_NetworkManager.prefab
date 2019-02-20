@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3789489560929738619}
   m_Layer: 0
   m_Name: _NetworkManager
-  m_TagString: Untagged
+  m_TagString: NetworkManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomSize: 6
+  customNetworkManager: {fileID: 0}
   hostGameInputField: {fileID: 0}
 --- !u!114 &3789489560929738619
 MonoBehaviour:
