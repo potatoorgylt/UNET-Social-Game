@@ -17,14 +17,18 @@ public class JoinGame : MonoBehaviour
     [SerializeField]
     private Transform roomListParent;
 
-    public NetworkCustom networkManager;
+    public NetworkCustom customNetworkManager;
 
     private void Start()
     {
+
+        GameObject networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
+        customNetworkManager = networkManagerObj.GetComponent<NetworkCustom>();
+
         //networkManager = NetworkManager.singleton;
-        if (networkManager.matchMaker == null)
+        if (customNetworkManager.matchMaker == null)
         {
-            networkManager.StartMatchMaker();
+            customNetworkManager.StartMatchMaker();
         }
 
         RefreshRoomList();
@@ -33,7 +37,7 @@ public class JoinGame : MonoBehaviour
     public void RefreshRoomList()
     {
         ClearRoomList();
-        networkManager.matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
+        customNetworkManager.matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
         status.text = "Loading...";
     }
 
@@ -82,7 +86,7 @@ public class JoinGame : MonoBehaviour
 
     public void JoinRoom(MatchInfoSnapshot _match)
     {
-        networkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, networkManager.OnMatchJoined);
+        customNetworkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, customNetworkManager.OnMatchJoined);
         ClearRoomList();
         status.text = "Joining...";
 

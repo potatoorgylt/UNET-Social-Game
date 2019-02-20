@@ -16,6 +16,9 @@ public class HostGame : MonoBehaviour {
 
     private void Start()
     {
+        GameObject networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
+        customNetworkManager = networkManagerObj.GetComponent<NetworkCustom>();
+
         if(PlayerPrefs.GetString("PlayerName") != "" || PlayerPrefs.GetString("PlayerName") != null)
         {
             string roomName = PlayerPrefs.GetString("PlayerName") + "'s room";
