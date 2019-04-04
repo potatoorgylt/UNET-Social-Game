@@ -14,8 +14,8 @@ public class VgtuCharSetup : NetworkBehaviour
 
     [SerializeField]
     string dontDrawLayerName = "DontDraw";
-    [SerializeField]
-    GameObject playerGraphics;
+    //[SerializeField]
+    //GameObject playerGraphics;
 
     [SerializeField]
     GameObject playerUIPrefab;
@@ -40,7 +40,7 @@ public class VgtuCharSetup : NetworkBehaviour
         {
             StartCoroutine(LateStart(0.1f));
             //Disable player graphics for local player
-            SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayerName));
+            //SetLayerRecursively(playerGraphics, LayerMask.NameToLayer(dontDrawLayerName));
 
             //Create player UI
             playerUIInstance = Instantiate(playerUIPrefab);
@@ -71,7 +71,7 @@ public class VgtuCharSetup : NetworkBehaviour
         GetComponent<VgtuPlayer>().username = value;
     }
 
-    public void SetLayerRecursively(GameObject obj, int newLayer) //Depracated
+    /*public void SetLayerRecursively(GameObject obj, int newLayer) //Depracated
     {
         obj.layer = newLayer;
 
@@ -79,7 +79,7 @@ public class VgtuCharSetup : NetworkBehaviour
         {
             SetLayerRecursively(child.gameObject, newLayer);
         }
-    }
+    }*/
 
     public override void OnStartClient()
     {
