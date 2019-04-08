@@ -5,3 +5,4 @@ Dependancies:
 Dissonance Voice Chat
 Unity Effect Examples
 Obi Cloth
+Everyday Motion Pack

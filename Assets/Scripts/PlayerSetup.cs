@@ -56,7 +56,7 @@ public class PlayerSetup : NetworkBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         _name = PlayerPrefs.GetString("PlayerName");
-        GameObject.FindGameObjectWithTag("Chat").GetComponent<Chat>().ClientConnectedMessage(_name, Chat.Message.MessageType.info);
+        GameObject.FindGameObjectWithTag("Chat").GetComponent<Chat>().ClientEventMessage(_name, Chat.Message.MessageType.info);
 
         CmdSetNewUsername(_name);
     }

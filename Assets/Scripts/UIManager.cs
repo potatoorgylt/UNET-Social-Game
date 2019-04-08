@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Button btn1;
+    /*public Button btn1;
     public Button btn2;
 
     private GameObject networkManagerObj;
@@ -31,5 +31,5 @@ public class UIManager : MonoBehaviour
         {
             networkManager.btn2();
         }
-    }
+    }*/
 }

@@ -19,6 +19,13 @@ public class Chat : NetworkBehaviour
     [SerializeField]
     private Text chatArea;
 
+    [SerializeField]
+    private GameObject emotionPanel;
+    private bool emotionPanelToggle = true;
+
+    [SerializeField]
+    private GameObject emotionButton;
+
     public Color playerMessage, info;
 
     //Messages
@@ -34,9 +41,6 @@ public class Chat : NetworkBehaviour
     [SerializeField]
     private SyncListString chatLog = new SyncListString();
 
-    //[SyncVar]
-    //public string currMessage = ""; //deprecated
-
     public override void OnStartClient()
     {
         chatLog.Callback = OnChatUpdated; // set chatlog callback to OnChatUpdated
@@ -45,7 +49,6 @@ public class Chat : NetworkBehaviour
     private void Awake()
     {
         chatPanel = this.transform.GetChild(0).gameObject;
-        //ToggleChat(false);
     }
 
     public void Start()
@@ -69,23 +72,25 @@ public class Chat : NetworkBehaviour
                 ToggleChat(false);
             }
         }
-        else
+        else if (chatInputField.text == "" && Input.GetKeyDown(KeyCode.Return))
         {
-            if (!chatInputField.isFocused && Input.GetKeyDown(KeyCode.Return))
-            {
-                ToggleChat(true);
-                chatInputField.ActivateInputField();
-            }
+            ToggleChat(true);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleChat(false);
+            emotionPanelToggle = true;
+            //isToggled = true;
+        }
+        if (!chatInputField.isFocused)
+        {
+            chatInputField.ActivateInputField();   
         }
     }
     [Client]
     private void PostMessageToChat(string message, Message.MessageType messageType)
     {
-        if (chatInputField.text != "")
+        if (chatInputField.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
             ToggleChat(!isToggled);
 
@@ -104,20 +109,22 @@ public class Chat : NetworkBehaviour
     }
 
     [Client]
-    public void ClientConnectedMessage(string playerName, Message.MessageType messageType)
+    public void ClientEventMessage(string playerMessage, Message.MessageType messageType)
     {
         Message newMessage = new Message();
-        newMessage.text = playerName;
+        newMessage.text = playerMessage;
 
         messageList.Add(newMessage);
 
         //string playerName = GameManager.instance.clientUsername;
 
         StringMessage msg;
-        msg = new StringMessage(playerName + " connected!");
+        msg = new StringMessage(playerMessage);
 
         _client.Send(chatMsg, msg);
     }
+
+
 
     [Server]
     void OnServerPostChatMessage(NetworkMessage netMsg)
@@ -148,10 +155,63 @@ public class Chat : NetworkBehaviour
     public void ToggleChat(bool cond)
     {
         chatInputField.gameObject.SetActive(cond);
-        this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().enabled = cond;
+        gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().enabled = cond;
         scrollbarVertical.GetComponent<Image>().enabled = cond;
         scrollbarVertical.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().enabled = cond;
+        emotionButton.SetActive(cond);
+        emotionPanel.SetActive(false);
         isToggled = cond;
+    }
+
+    public void ToggleEmotionPanel()
+    {
+        emotionPanel.SetActive(emotionPanelToggle);
+        if (emotionPanelToggle == true)
+            emotionPanelToggle = false;
+        else
+            emotionPanelToggle = true;
+    }
+
+    GameObject localPlayer;
+    Animator localAnimator;
+
+    public void PlayAnimation(int state)
+    {
+        localPlayer = GameObject.Find("LocalPlayer");
+        string playerName = localPlayer.GetComponent<VgtuCharSetup>()._name;
+
+        switch (state)
+        {
+            case 0:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " is laughing from something.", Message.MessageType.info);
+                break;
+            case 1:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " is extraordinary happy.", Message.MessageType.info);
+                break;
+            case 2:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " feels frustrated as hell.", Message.MessageType.info);
+                break;
+            case 3:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " is pissed", Message.MessageType.info);
+                break;
+            case 4:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " is crying eyes out.", Message.MessageType.info);
+                break;
+            case 5:
+                localPlayer.GetComponent<PlayEmote>().AnimationPlay(state);
+                ClientEventMessage(playerName + " has smooth moves.", Message.MessageType.info);
+                break;
+            default:
+                Debug.LogError("Animation state out of bounds");
+                break;
+
+        }
+        ToggleEmotionPanel();
     }
 
     [System.Serializable]

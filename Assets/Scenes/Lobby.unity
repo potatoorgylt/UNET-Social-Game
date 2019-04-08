@@ -301,8 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d50e062225f884d8d81556489d20fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn1: {fileID: 596839777}
-  btn2: {fileID: 1021206647}
 --- !u!1 &186833148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +2882,7 @@ GameObject:
   - component: {fileID: 2793687525108436711}
   - component: {fileID: 2793687525108436713}
   - component: {fileID: 3789489562677807528}
+  - component: {fileID: 2793687525108436714}
   m_Layer: 0
   m_Name: _NetworkManager
   m_TagString: NetworkManager
@@ -2908,6 +2907,19 @@ MonoBehaviour:
   showGUI: 1
   offsetX: 0
   offsetY: 0
+--- !u!114 &2793687525108436714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2793687525108436712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 83d50e062225f884d8d81556489d20fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3789489562677807528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,4 +3006,3 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
-  chosenCharacter: 0

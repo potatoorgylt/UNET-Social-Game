@@ -32,7 +32,7 @@ public class PlayerUI : MonoBehaviour {
         }
     }
 
-    void SetFuelAmount(float _amount)
+    void SetFuelAmount(float _amount) //deprecated
     {
         thrusterFuelFill.localScale = new Vector3(1f, _amount, 1f);
     }

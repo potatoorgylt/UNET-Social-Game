@@ -23,7 +23,6 @@ public class CharacterSelection : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("CharacterSelected"));
         for (int i = 0; i < characters.Count; i++)
         {
             if(characters[i].characterToggle.isOn == true)

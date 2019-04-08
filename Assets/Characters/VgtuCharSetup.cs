@@ -60,7 +60,7 @@ public class VgtuCharSetup : NetworkBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         _name = PlayerPrefs.GetString("PlayerName");
-        GameObject.FindGameObjectWithTag("Chat").GetComponent<Chat>().ClientConnectedMessage(_name, Chat.Message.MessageType.info);
+        GameObject.FindGameObjectWithTag("Chat").GetComponent<Chat>().ClientEventMessage(_name + " connected!", Chat.Message.MessageType.info);
 
         CmdSetNewUsername(_name);
     }
@@ -89,6 +89,12 @@ public class VgtuCharSetup : NetworkBehaviour
         VgtuPlayer _vgtuPlayer = GetComponent<VgtuPlayer>();
 
         GameManager.RegisterPlayer(_netID, null, _vgtuPlayer);
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        base.OnStartLocalPlayer();
+        gameObject.name = "LocalPlayer";
     }
 
     void AssignRemoteLayer()

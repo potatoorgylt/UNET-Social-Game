@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Dissonance/Integrations/UNet_HLAPI/Demo/HLAPI Demo.unity
     guid: 94084c34450850b40ab831ea11f9f0ab
   - enabled: 1
-    path: Assets/Scenes/CharacterCreation.unity
-    guid: 4f07ff7edf3466f459c3535cd487222f
+    path: Assets/Scenes/CharacterCreationV2.unity
+    guid: 844a455b63c8c2541a55e2734f889cdd
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 5605a85d8d03e9f4f868f2de386773ff
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Dissonance/Integrations/UNet_HLAPI/Demo/HLAPI Game World.unity
     guid: ca5eca46a6d572642ac1eb2b75dab7c4
   - enabled: 0
-    path: Assets/Scenes/CharacterTestScene.unity
-    guid: 4fa81bca123d5a64d8d6e9dec4450b08
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

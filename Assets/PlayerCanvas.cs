@@ -58,7 +58,7 @@ public class PlayerCanvas : NetworkBehaviour
 
     void StartMessage()
     {
-        if (chatInput.text != "")
+        if (chatInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
             messageToDisplay = chatInput.text;
             StopCoroutine("ShowMessage");
@@ -81,8 +81,6 @@ public class PlayerCanvas : NetworkBehaviour
             return;
         }
 
-        //Tell server
-        Debug.Log("!isServer");
         CmdChatDialog(messageToDisplay, toggleChat);
     }
 
@@ -96,7 +94,6 @@ public class PlayerCanvas : NetworkBehaviour
     void RpcChatDialog(string message, bool toggleChat)
     {
         //tempMessage = chat.currMessage; //should be in update //deprecated
-        Debug.Log("rpc");
         this.toggleChat = toggleChat;
         chatPanel.SetActive(!toggleChat);
 
