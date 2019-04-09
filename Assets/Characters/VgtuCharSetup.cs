@@ -28,6 +28,9 @@ public class VgtuCharSetup : NetworkBehaviour
     [HideInInspector]
     public string _name;
 
+    [SerializeField]
+    private GameObject cm_ThirdPerson;
+
     private void Start()
     {
         playerUI3d.GetComponent<LookAtObject>().target = Camera.main.transform;
@@ -35,6 +38,8 @@ public class VgtuCharSetup : NetworkBehaviour
         {
             DisableComponents();
             AssignRemoteLayer();
+            //Disable camera third persone camera
+            cm_ThirdPerson.SetActive(false);
         }
         else
         {
