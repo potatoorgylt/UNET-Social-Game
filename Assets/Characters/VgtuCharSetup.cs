@@ -10,6 +10,12 @@ public class VgtuCharSetup : NetworkBehaviour
     Behaviour[] componentsToDisable;
 
     [SerializeField]
+    private GameObject[] localObjectsToDisable;
+
+    [SerializeField]
+    private GameObject[] serverObjectsToDisable;
+
+    [SerializeField]
     string remoteLayerName = "RemotePlayer";
 
     [SerializeField]
@@ -28,18 +34,14 @@ public class VgtuCharSetup : NetworkBehaviour
     [HideInInspector]
     public string _name;
 
-    [SerializeField]
-    private GameObject cm_ThirdPerson;
-
     private void Start()
     {
         playerUI3d.GetComponent<LookAtObject>().target = Camera.main.transform;
         if (!isLocalPlayer)
         {
             DisableComponents();
+            DisableGameObjects(serverObjectsToDisable);
             AssignRemoteLayer();
-            //Disable camera third persone camera
-            cm_ThirdPerson.SetActive(false);
         }
         else
         {
@@ -58,6 +60,8 @@ public class VgtuCharSetup : NetworkBehaviour
             //ui.SetController(GetComponent<PlayerController>());
 
             GetComponent<VgtuPlayer>().SetupPlayer();
+
+            DisableGameObjects(localObjectsToDisable);
         }
     }
 
@@ -112,6 +116,14 @@ public class VgtuCharSetup : NetworkBehaviour
         for (int i = 0; i < componentsToDisable.Length; i++)
         {
             componentsToDisable[i].enabled = false;
+        }
+    }
+
+    void DisableGameObjects(GameObject[] objects)
+    {
+        for(int i = 0; i < objects.Length; i++)
+        {
+            objects[i].SetActive(false);
         }
     }
 

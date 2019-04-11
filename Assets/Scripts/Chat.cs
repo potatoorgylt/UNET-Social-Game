@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.NetworkSystem;
+using Cinemachine;
 
 [RequireComponent(typeof(NetworkIdentity))]
 public class Chat : NetworkBehaviour
@@ -74,9 +75,9 @@ public class Chat : NetworkBehaviour
         }
         else if (chatInputField.text == "" && Input.GetKeyDown(KeyCode.Return))
         {
-            ToggleChat(true);
+            ToggleChat(!isToggled);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (emotionButton.activeSelf == true && Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleChat(false);
             emotionPanelToggle = true;
@@ -160,6 +161,10 @@ public class Chat : NetworkBehaviour
         scrollbarVertical.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Image>().enabled = cond;
         emotionButton.SetActive(cond);
         emotionPanel.SetActive(false);
+
+        CameraControl.instance.EnableAxis(!cond, "Mouse X");
+        CameraControl.instance.EnableAxis(!cond, "Mouse Y");
+
         isToggled = cond;
     }
 

@@ -14,8 +14,6 @@ public class PauseMenu : MonoBehaviour
         //networkManager = NetworkManager.singleton;
         networkManagerObj = GameObject.FindGameObjectWithTag("NetworkManager");
         networkManager = networkManagerObj.GetComponent<NetworkCustom>();
-        Debug.Log("Getting net manager: " + networkManager);
-        Debug.Log( networkManager);
     }
 
     public void LeaveRoom()

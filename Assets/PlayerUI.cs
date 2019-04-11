@@ -39,7 +39,12 @@ public class PlayerUI : MonoBehaviour {
 
     void TogglePauseMenu()
     {
+        
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+
         PauseMenu.isOn = pauseMenu.activeSelf;
+
+        CameraControl.instance.EnableAxis(!PauseMenu.isOn, "Mouse X");
+        CameraControl.instance.EnableAxis(!PauseMenu.isOn, "Mouse Y");
     }
 }
