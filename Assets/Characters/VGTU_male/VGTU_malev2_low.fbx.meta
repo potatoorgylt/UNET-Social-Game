@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MBLab_anime_eyes1549316690.8157065
-    second: {fileID: 2100000, guid: f7a12eef983c68445ae54d7dddfed25f, type: 2}
+    second: {fileID: 2100000, guid: ec3d6b8edf75f414c95ea21c37b053bd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
