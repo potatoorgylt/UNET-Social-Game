@@ -6,14 +6,23 @@ public class ColorPickerReceiver : MonoBehaviour
 {
     public Renderer[] skinRends;
     private SkinColorChanger skinColorChanger = new SkinColorChanger();
+    private ColorSave colorSave = new ColorSave();
 
     public ObjectToColor[] objectsToColor;
 
     void Start()
     {
+        for (int i = 0; i < objectsToColor.Length; i++)
+        {
+            if(PlayerPrefs.GetString("CharColor"+i) != "")
+            {
+                GetColor(i);
+            }
+        }
         InitSkinColor();
+        SkinColor();
 
-        foreach(ObjectToColor objToColor in objectsToColor)
+        foreach (ObjectToColor objToColor in objectsToColor)
         {
             objToColor.picker.onValueChanged.AddListener(color =>
             {
@@ -40,6 +49,35 @@ public class ColorPickerReceiver : MonoBehaviour
     public void ChangeSkinColor(float range)
     {
         skinColorChanger.ChangeSkin(range);
+    }
+
+    public void SaveColors()
+    {
+        //Hair and clothes
+        int i = 0;
+        foreach (ObjectToColor objToColor in objectsToColor)
+        {
+            colorSave.SaveColor("CharColor"+i, objToColor.Color);
+            i++;
+        }
+        //Skin
+        colorSave.SaveColor("SkinColor", skinColorChanger.GetColor());
+    }
+
+    public void GetColor(int index)
+    {
+        objectsToColor[index].Color = colorSave.GetSavedColor("CharColor" + index);
+    }
+
+    public void SkinColor()
+    {
+        if (PlayerPrefs.GetString("SkinColor") != "")
+        {
+            //Color skin = skinColorChanger.GetColor();
+            Color skin = colorSave.GetSavedColor("SkinColor");
+            skinColorChanger.curColor = skin;
+            skinColorChanger.SetColor();
+        }
     }
 
     [System.Serializable]

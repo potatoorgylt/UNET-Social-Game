@@ -28,9 +28,19 @@ public class SkinColorChanger
         curColor.g = Mathf.Lerp(endValue.g, startValue.g, 1f - range);
         curColor.b = Mathf.Lerp(endValue.b, startValue.b, 1f - range);
 
+        SetColor();
+    }
+
+    public void SetColor()
+    {
         for (int i = 0; i < skinRenderer.Count; i++)
         {
             skinRenderer[i].materials[2].color = curColor;
         }
+    }
+
+    public Color GetColor()
+    {
+        return curColor;
     }
 }
